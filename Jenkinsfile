@@ -2,12 +2,19 @@ pipeline {
     agent any
 
     stages{
-        stage("create zip file"){
+        stage("build"){
             steps{
-               
-           sh 'zip middlewasreScript-${BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md '  
-            
+                echo "hello build"
             }
+            stage("test"){
+            steps{
+                echo "hello test"
+            }
+            stage("deploy"){
+            steps{
+                echo "hello deploy"
+            }
+
         }
         
     }
